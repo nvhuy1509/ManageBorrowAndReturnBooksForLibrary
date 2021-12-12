@@ -6,7 +6,7 @@ class DB
 
     public static function getInstance()
     {
-        self::$instance = new mysqli("localhost", "root","", 'php_cuoiki');
+        self::$instance = new mysqli("localhost", "root","", 'library');
         if (self::$instance) {
             return self::$instance;
         } else {
