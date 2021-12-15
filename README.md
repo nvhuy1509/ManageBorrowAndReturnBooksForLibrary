@@ -1,5 +1,6 @@
 # ManageBorrowAndReturnBooksForLibrary
-## Mng nho pull code ve roi moi push len tranh bi conflict code nhe
+## Biết là ai cũng thành thạo rùi nhưng tôi cứ để đây cho nhớ :V
+## Mọi người trước khi làm nhớ pull code về trước nhé. Cả trước khi push lên cũng nên fetch về xem. Tránh để conflict code nhé
 ## Requirements
 Login/Logout: 
 
