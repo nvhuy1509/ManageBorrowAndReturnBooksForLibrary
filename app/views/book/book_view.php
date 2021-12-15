@@ -46,7 +46,7 @@ table {
                 <div class="sidebar-sticky">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" href="">
+                            <a class="nav-link active" href="/Project/app/views/dashboard.php">
                                 <i class="fas fa-home"></i>
                                 <span>Dashboard</span>
                             </a>
@@ -58,7 +58,7 @@ table {
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">
+                            <a class="nav-link" href="/Project/app/views/book/book_view.php">
                                 <i class="fas fa-server"></i>
                                 <span>Sách</span>
                             </a>
