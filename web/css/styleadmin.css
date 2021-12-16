@@ -1,0 +1,104 @@
+.main-header .navbar.navbar-static-top:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    z-index: -1;
+    background: url(../image/trong-dong.png) no-repeat center right 100px;
+    display: block !important;
+    background-size: 700px;
+}
+.main-sidebar .sidebar:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    z-index: -1;
+    background: url(../image/trong-dong-trang-den.png) no-repeat center top 300px;
+    background-size: 700px 700px;
+}
+.text-title{
+    line-height: 50px;
+    color: #fff;
+    font-size: 18px;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    vertical-align: middle !important;}
+.download{
+    width: 100px;
+    height: 32px;
+    background-color: #d58512;
+}
+.table-custom{
+    background-color: #483D8B !important;
+}
+/*Phân trang*/
+.phantrang1 {
+    padding:2px 5px 2px 5px;
+    margin:2px;
+    border:1px solid #999;
+    color: #666;
+}
+.phantrang2 {
+
+    background-color: #999;
+
+}
+.phantrang{
+    margin: 0 auto;
+    text-align: center;
+}
+@media (max-width: 900px) {
+    .table_don_hang {
+        width: 100%;
+        display:block;
+    }
+
+    .table_don_hang table {
+        width: 100%;
+        display: inline-block;
+        overflow: auto;
+    }
+}
+@media (max-width: 800px) {
+    .table_thanh_vien {
+        width: 100%;
+        display:block;
+    }
+
+    .table_thanh_vien table {
+        width: 100%;
+        display: inline-block;
+        overflow: auto;
+    }
+}
+@media (max-width: 650px) {
+    .table_nha_xuat_ban {
+        width: 100%;
+        display:block;
+    }
+
+    .table_nha_xuat_ban table {
+        width: 100%;
+        display: inline-block;
+        overflow: auto;
+    }
+}
+@media (max-width: 450px) {
+    .table_loai_hang {
+        width: 100%;
+        display:block;
+    }
+
+    .table_loai_hang table {
+        width: 100%;
+        display: inline-block;
+        overflow: auto;
+    }
+}
