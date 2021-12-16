@@ -1,9 +1,9 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
-  <h1>Quản lý sách</h1>
+  <h1>Quản lý người dùng</h1>
   <ol class="breadcrumb">
     <li>
-      <a href="#"><i class="fa fa-group"></i>Quản lý sách</a>
+      <a href="#"><i class="fa fa-group"></i>Quản lý người dùng</a>
     </li>
   </ol>
 </section>
@@ -12,11 +12,11 @@
   <div class="box box-primary">
     <div class="box-header with-border">
       <div class="box-header ">
-        <h3 class="box-title">Danh sách ấn phẩm</h3>
+        <h3 class="box-title">Danh sách người dùng</h3>
       </div>
     </div>
     <!-- /.box-header -->
-    <!-- <div class="box-body my_box tab-content">
+    <div class="box-body my_box tab-content">
       <div class="row" style="margin-bottom: 5px">
         <div class="col-md-6">
           <button
@@ -34,25 +34,11 @@
             <i class="fa fa-search" aria-hidden="true"></i>
           </button>
         </div>
-      </div> -->
-      <div  style = "margin-top: 3%;" align="center">
-					<label>Thể loại</label>
-					<input  style="width:50%; " type="select" id="search" name="search">
-				</div>
-				<div style = "margin-top: 3%;" align="center">
-					<label >Từ khóa</label>
-					<input  style="width:50%; " type="text" id="search" name="search">
-				</div>
-				<div style = "margin-top: 3%;" align="center">
-					<input  type="submit" name="btn_submit" style="background-color: #5b9bd5" value="Tìm kiếm"></input >
-				</div>
+      </div>
 
-				<div style = "margin-top: 3%;  margin-left: 1%;  margin-bottom: 5%">
-				<?php echo 'Số quyển sách tìm thấy: XXX' ?>   
-				</div>
       <div id="" class="tab-pane fade in active">
         <table class="table table-bordered">
-          <!-- <colgroup>
+          <colgroup>
             <col width="5%" />
             <col width="20%" />
             <col width="15%" />
@@ -60,22 +46,30 @@
             <col width="15%" />
             <col width="15%" />
             <col width="20%" />
-          </colgroup> -->
+          </colgroup>
           <thead class="bg-orange">
             <tr>
-              <th class="text-center align-middle">No.</th>
-              <th class="text-center align-middle">Tên sách</th>
-              <th class="text-center align-middle">Thể loại</th>
-              <th class="text-center align-middle">Mô tả chi tiết</th>
+              <th class="text-center align-middle">STT</th>
+
+              <th class="text-center align-middle">Tên</th>
+              <th class="text-center align-middle">
+                Chức vụ
+              </th>
+              <th class="text-center align-middle">Mã số</th>
+              <th class="text-center align-middle">Ảnh hiển thị</th>
+              <th class="text-center align-middle">Mô tả</th>
               <th class="text-center align-middle">Thao tác</th>
             </tr>
           </thead>
-          <tbody>	
+          <tbody>
             <tr>
-              <td class="text-center align-middle">1</td>
-              <td class="text-left align-middle">2</td>
-              <td class="text-left align-middle">3</td>
-              <td class="text-center align-middle">4</td>
+              <td class="text-center align-middle"></td>
+
+              <td class="text-left align-middle"></td>
+              <td class="text-left align-middle"></td>
+              <td class="text-center align-middle"></td>
+              <td class="text-center align-middle"></td>
+              <td class="text-center align-middle"></td>
               <td class="text-center align-middle">
                 <button type="button" class="btn btn-primary">
                   Sửa
@@ -96,4 +90,3 @@
   </div>
 </section>
 <!-- /.content -->
-
