@@ -5,7 +5,7 @@ define('CONST_DB_DATABASE_NAME', 'library');
 define('CONST_DB_USER_NAME', 'root');
 define('CONST_DB_USER_PASSWORD', '');
 
-define('SITE_ROOT','/final/');
+define('SITE_ROOT','/ManageBorrowAndReturnBooksForLibrary/');
 
 if (defined('CLI') == false)
 {
