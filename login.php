@@ -1,3 +1,3 @@
-<?php
-    include_once 'app/controllers/loginCtrl.php';
-?>
+
+    <?php
+    include_once 'app/controller/loginCtrl.php';
