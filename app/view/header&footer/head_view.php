@@ -6,15 +6,14 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Name</title>
+        <title>Library</title>
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <link href="<?php echo FULL_SITE_ROOT ?>web/css/styleadmin.css" rel="stylesheet" type="text/css"/>
         <link rel="shortcut icon" href="<?php echo FULL_SITE_ROOT ?>web/images/icon.png" type="image/x-icon" />
         <link rel="stylesheet" href="<?php echo FULL_SITE_ROOT ?>web/css/bootstrap.min.css">
-        <link rel="stylesheet" href="<?php echo FULL_SITE_ROOT ?>web/css/fontawesome.min.css">
         <link rel="stylesheet" href="<?php echo FULL_SITE_ROOT ?>web/css/AdminLTE.min.css">
         <link rel="stylesheet" href="<?php echo FULL_SITE_ROOT ?>web/css/_all-skins.min.css">
-       
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     </head>
     <body class="skin-blue sidebar-mini skin-green-light">
@@ -39,7 +38,7 @@
                             <!-- User Account: style can be found in dropdown.less -->
                             <li class="dropdown user user-menu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <span class="hidden-xs"></span>
+                                    <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <!-- User image -->

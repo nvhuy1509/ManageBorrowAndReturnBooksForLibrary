@@ -73,12 +73,12 @@
                 <a type="button" class="btn btn-primary sua_sach"data-id_sua='1' href="?method=edit_user" >
               
                   Sửa
-</a>
+                </a>
                 <button type="button" class="btn btn-danger">
                   Xóa
                 </button>
                 <a class="btn btn-default" title="Xem chi tiết" href="">
-                    <i class="far fa-eye"></i>
+                    <i class="fa fa-eye"></i>
                 </a>
               </td>
             </tr>
