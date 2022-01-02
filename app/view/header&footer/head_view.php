@@ -11,7 +11,7 @@
         <link href="<?php echo FULL_SITE_ROOT ?>web/css/styleadmin.css" rel="stylesheet" type="text/css"/>
         <link rel="shortcut icon" href="<?php echo FULL_SITE_ROOT ?>web/images/icon.png" type="image/x-icon" />
         <link rel="stylesheet" href="<?php echo FULL_SITE_ROOT ?>web/css/bootstrap.min.css">
-        <link rel="stylesheet" href="<?php echo FULL_SITE_ROOT ?>web/css/fontawesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
         <link rel="stylesheet" href="<?php echo FULL_SITE_ROOT ?>web/css/AdminLTE.min.css">
         <link rel="stylesheet" href="<?php echo FULL_SITE_ROOT ?>web/css/_all-skins.min.css">
        
@@ -80,9 +80,9 @@
                     <!-- /.search form -->
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
-                        <li><a href="<?php echo FULL_SITE_ROOT ?>app/controller/bookCtrl.php"><i class="fa fa-book"></i><span>Quản lý sách</span></a></li>
-                        <li><a href="<?php echo FULL_SITE_ROOT ?>app/controller/userCtrl.php"><i class="fa fa-user-plus"></i><span>Người dùng</span></a></li>
-                        <li><a href="<?php echo FULL_SITE_ROOT ?>app/controller/muontraCtrl.php"><i class="fa fa-th"></i><span>Mượn trả</span></a></li>
+                        <li><a href="?url=book"><i class="fa fa-user-plus"></i><span>Quản lý sách</span></a></li>
+                        <li><a href="?url=user"><i class="fa fa-user-plus"></i><span>Người dùng</span></a></li>
+                        <li><a href="?url=muontra"><i class="fa fa-th"></i><span>Mượn trả</span></a></li>
                     </ul>
                 </section>
                 <!-- /.sidebar -->

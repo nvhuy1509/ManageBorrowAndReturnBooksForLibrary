@@ -61,16 +61,19 @@
             </tr>
           </thead>
           <tbody>
+            <?php  foreach($row as $value){
+              ?>
+           
             <tr>
-              <td class="text-center align-middle"></td>
+              <td class="text-center align-middle"><?php echo $value['id'] ?></td>
 
-              <td class="text-left align-middle"></td>
-              <td class="text-left align-middle"></td>
-              <td class="text-center align-middle"></td>
-              <td class="text-center align-middle"></td>
-              <td class="text-center align-middle"></td>
+              <td class="text-left align-middle"><?php echo $value['name'] ?></td>
+              <td class="text-left align-middle"><?php echo $value['type'] ?></td>
+              <td class="text-center align-middle"><?php echo $value['user_id'] ?></td>
+              <td class="text-center align-middle"><?php echo $value['avatar'] ?></td>
+              <td class="text-center align-middle"><?php echo $value['description'] ?></td>
               <td class="text-center align-middle">
-                <a type="button" class="btn btn-primary sua_sach"data-id_sua='1' href="?method=edit_user" >
+                <a type="button" class="btn btn-primary sua_sach" href="?url=library_edit&method=view_edit_input&id=<?php echo $value['id'] ?>" >
               
                   Sửa
 </a>
@@ -78,10 +81,12 @@
                   Xóa
                 </button>
                 <a class="btn btn-default" title="Xem chi tiết" href="">
-                    <i class="far fa-eye"></i>
+                    <i class="fa fa-eye"></i>
                 </a>
               </td>
             </tr>
+            <?php }
+              ?>
           </tbody>
         </table>
       </div>
