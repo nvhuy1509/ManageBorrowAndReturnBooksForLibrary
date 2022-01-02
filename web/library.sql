@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 15, 2021 lúc 04:30 PM
--- Phiên bản máy phục vụ: 10.4.19-MariaDB
--- Phiên bản PHP: 7.3.28
+-- Máy chủ: localhost
+-- Thời gian đã tạo: Th12 30, 2021 lúc 04:18 AM
+-- Phiên bản máy phục vụ: 10.4.22-MariaDB
+-- Phiên bản PHP: 8.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,9 +33,16 @@ CREATE TABLE `admins` (
   `password` varchar(64) NOT NULL,
   `actived_flag` int(1) NOT NULL,
   `reset_password_token` varchar(100) DEFAULT NULL,
-  `updated` datetime NOT NULL,
-  `created` datetime NOT NULL
+  `updated` datetime NOT NULL DEFAULT current_timestamp(),
+  `created` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `admins`
+--
+
+INSERT INTO `admins` (`id`, `login_id`, `password`, `actived_flag`, `reset_password_token`, `updated`, `created`) VALUES
+(1, 'iamadmin', 'a41acc7effe601de1dc2099a4e2fdd7c', 1, NULL, '2021-12-30 02:42:19', '2021-12-30 02:42:19');
 
 -- --------------------------------------------------------
 
@@ -51,8 +58,8 @@ CREATE TABLE `books` (
   `quantity` int(3) NOT NULL,
   `avatar` varchar(250) DEFAULT NULL,
   `description` text DEFAULT NULL,
-  `updated` datetime NOT NULL,
-  `created` datetime NOT NULL
+  `updated` datetime NOT NULL DEFAULT current_timestamp(),
+  `created` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -69,8 +76,8 @@ CREATE TABLE `book_transactions` (
   `return_plan_date` date NOT NULL,
   `return_actual_date` date NOT NULL,
   `description` text DEFAULT NULL,
-  `updated` datetime NOT NULL,
-  `created` datetime NOT NULL
+  `updated` datetime NOT NULL DEFAULT current_timestamp(),
+  `created` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -86,8 +93,8 @@ CREATE TABLE `users` (
   `user_id` char(15) NOT NULL,
   `avatar` varchar(250) DEFAULT NULL,
   `description` text DEFAULT NULL,
-  `updated` datetime NOT NULL,
-  `created` datetime NOT NULL
+  `updated` datetime NOT NULL DEFAULT current_timestamp(),
+  `created` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -128,7 +135,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT
 
 --
 -- AUTO_INCREMENT cho bảng `books`

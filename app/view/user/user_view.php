@@ -76,7 +76,7 @@
                 <a type="button" class="btn btn-primary sua_sach" href="?url=library_edit&method=view_edit_input&id=<?php echo $value['id'] ?>" >
               
                   Sửa
-</a>
+                </a>
                 <button type="button" class="btn btn-danger">
                   Xóa
                 </button>
