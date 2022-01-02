@@ -7,7 +7,7 @@ class DB
     public static function getInstance()
     {
         self::$instance = new mysqli("localhost", "root","", 'library');
-        if (self::$instance) {
+        if (self::$instance) {  
             return self::$instance;
         } else {
             die("Connection failed: " . self::$instance->connect_error);
