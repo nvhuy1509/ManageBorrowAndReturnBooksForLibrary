@@ -39,20 +39,21 @@
                             <!-- User Account: style can be found in dropdown.less -->
                             <li class="dropdown user user-menu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <span class="caret"></span>
+                                    <?php echo $_SESSION["username"]; ?>
+				                    <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <!-- User image -->
                                     <li class="user-header">
                                         <p>
-                                            -- Web Developer --
+                                            Admin: <?php echo $_SESSION["username"]; ?>
                                         </p>
                                         <div class="user-footer">
                                             <div class="pull-left">
                                                 <a href="" class="btn btn-default btn-flat">Đổi mật khẩu</a>
                                             </div>
                                             <div class="pull-right">
-                                                <a href="" class="btn btn-default btn-flat">Đăng xuất</a>
+                                                <a href="logout.php" class="btn btn-default btn-flat">Đăng xuất</a>
                                             </div>
                                         </div>
                                     </li>

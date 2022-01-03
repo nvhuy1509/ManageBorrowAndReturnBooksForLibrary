@@ -1,5 +1,8 @@
 <?php
     session_start();
+    if (!isset($_SESSION['username'])) {
+	    header('Location: login.php');
+    }
     include_once "app/common/define.php";
     include_once 'app/view/header&footer/head_view.php';
     if(!isset($_GET['url'])){
