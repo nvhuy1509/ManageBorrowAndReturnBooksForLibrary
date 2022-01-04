@@ -7,7 +7,7 @@
         // quản lý người dùng-> sửa
         function view_edit_input(){
             $id =$_GET['id'];
-            include_once "app/models/user.php";
+            include_once "app/model/user.php";
             $getUser = new User();
             $row = $getUser->GetSingle("users",$id);
             $type = array(
@@ -33,7 +33,7 @@
             include_once 'app/view/user/user_edit_confirm.php';
         }
         function view_edit_complete(){
-            include_once "app/models/user.php";
+            include_once "app/model/user.php";
             if(isset($_POST['btn_cf'])){
                 $name = $_POST['name_user'];
                 $id = $_POST['id_user'];

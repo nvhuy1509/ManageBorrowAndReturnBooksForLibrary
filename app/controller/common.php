@@ -13,6 +13,9 @@
             case 'book':
                 include_once 'bookCtrl.php';
                 break;
+            case 'library_search':
+                include_once 'library_search.php';
+                break;
             // quản lý người dùng
             case 'user':
                 include_once 'userCtrl.php';
