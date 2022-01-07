@@ -34,6 +34,7 @@ class LoginCtrl{
                 }else{
 		            // save username into session
                     $_SESSION['username'] = $username;
+                    $_SESSION['login_at'] = date("Y-m-d H:i");
                     header('Location: index.php');
                 }
             }

@@ -46,7 +46,7 @@
                                     <!-- User image -->
                                     <li class="user-header">
                                         <p>
-                                            Admin: <?php echo $_SESSION["username"]; ?>
+                                            Login at: <?php echo $_SESSION['login_at']; ?>
                                         </p>
                                         <div class="user-footer">
                                             <div class="pull-left">
