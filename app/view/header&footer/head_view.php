@@ -11,6 +11,7 @@
         <link href="<?php echo FULL_SITE_ROOT ?>web/css/styleadmin.css" rel="stylesheet" type="text/css"/>
         <link rel="shortcut icon" href="<?php echo FULL_SITE_ROOT ?>web/images/icon.png" type="image/x-icon" />
         <link rel="stylesheet" href="<?php echo FULL_SITE_ROOT ?>web/css/bootstrap.min.css">
+        <link rel="stylesheet" href="<?php echo FULL_SITE_ROOT ?>web/css/stylebook.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
         <link rel="stylesheet" href="<?php echo FULL_SITE_ROOT ?>web/css/AdminLTE.min.css">
         <link rel="stylesheet" href="<?php echo FULL_SITE_ROOT ?>web/css/_all-skins.min.css">
