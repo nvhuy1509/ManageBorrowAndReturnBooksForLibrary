@@ -9,6 +9,9 @@ Login/Logout:
 
 Sách:
 - Thêm, sửa, xóa thông tin sách
+
+- Category(Thể loại) : Đặt chung theo format   1 => 'Khoa học', 2 => 'Tiểu thuyết',  3 => 'Manga',   4 => 'Sách giáo khoa'
+
 - Tìm kiếm, xem chi tiết
 
 Người dùng (Giáo viên, Sinh viên):
