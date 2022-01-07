@@ -11,7 +11,7 @@
                     <div class="form-group">
                         <label for="inputEmail3" class="col-sm-4 text-right">Ảnh bìa</label>
                         <div class="col-sm-8">
-                        <img class="style-img" src="<?php echo FULL_SITE_ROOT."web/avatar/".$row['id']."/".$row['avatar'] ?>" alt="">                        </div>
+                        <img class="img-responsive" src="<?php echo FULL_SITE_ROOT."web/avatar/".$row['id']."/".$row['avatar'] ?>" alt="">                        </div>
                     </div>
                     <div class="form-group">
                         <label for="" class="col-sm-4 text-right">Tên sách</label>
@@ -57,7 +57,7 @@
                     </div>
                 </form>
                 <div>
-                    <a class="btn btn-default" title="Xem chi tiết" href="?url=book&method=getAll">Quay lại<i class="fa fa-arrow-left"></i></a>
+                    <a class="btn btn-default" title="Xem chi tiết" href="?url=library_search&method=searchDataBook">Quay lại<i class="fa fa-arrow-left"></i></a>
                 </div>
             </div>
         </div>

@@ -14,8 +14,11 @@
                 $this->__conn = $connect->getInstance();
             }
         }
-        function getAll($table){
-            $sql = "select * from ".$table;
+        function getAll($table,$name ='', $cate = 0){
+            $sql = "select * from ".$table." where name like '%".$name ."%'";
+            if(isset($cate)&&$cate !=0){
+                $sql .= "and category = ".$cate;
+            }
             $query =  mysqli_query($this->__conn, $sql);
             $result = array();
             while ($row =  mysqli_fetch_assoc($query)){
@@ -29,26 +32,31 @@
             
             return $result;
         }
-        function getDataWithCate($table,$category,$name){
-            $sql = "select * from ".$table." where category = ".$category. "and name like ".$name;
-            $query =  mysqli_query($this->__conn, $sql);
-            $row =  mysqli_fetch_assoc($query);
-          
-            return $row;
-        }
+
         
-        function getDataNoCate($table,$name){
-            $sql = "select * from ".$table." where name like ".$name;
-            $query =  mysqli_query($this->__conn, $sql);
-            $row =  mysqli_fetch_assoc($query);
-          
-            return $row;
-        }
         function getDetailBook($table,$id){
             $sql = "select * from ".$table." where id=".$id;
             $query =  mysqli_query($this->__conn, $sql);
             $row =  mysqli_fetch_assoc($query);
           
             return $row;
+        }
+
+        function DeleteBook($table,$id){
+            $delete = "delete from ".$table." where id=".$id;
+            $querydelete =  mysqli_query($this->__conn, $delete);
+            $sql = "select * from ".$table."";
+            $query =  mysqli_query($this->__conn, $sql);
+            $result = array();
+            while ($row =  mysqli_fetch_assoc($query)){
+                foreach($this->category as $key=>$value){
+                    if($row['category']==$key){
+                        $row['category']=$value;
+                    }
+                }
+                $result[] = $row;
+            }
+            
+            return $result;
         }
     }
