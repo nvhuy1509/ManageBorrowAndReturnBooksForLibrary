@@ -57,7 +57,7 @@
                     </div>
                 </form>
                 <div>
-                    <a class="btn btn-default" title="Xem chi tiết" href="?url=book&method=getAll">Quay lại<i class="fa fa-arrow-left"></i></a>
+                    <a class="btn btn-default" title="Xem chi tiết" href="?url=library_search&method=searchDataBook">Quay lại<i class="fa fa-arrow-left"></i></a>
                 </div>
             </div>
         </div>

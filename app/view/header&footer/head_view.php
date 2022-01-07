@@ -81,7 +81,7 @@
                     <!-- /.search form -->
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
-                        <li><a href="?url=book"><i class="fa fa-user-plus"></i><span>Quản lý sách</span></a></li>
+                        <li><a href="?url=library_search&method=searchDataBook"><i class="fa fa-user-plus"></i><span>Quản lý sách</span></a></li>
                         <li><a href="?url=user"><i class="fa fa-user-plus"></i><span>Người dùng</span></a></li>
                         <li><a href="?url=muontra"><i class="fa fa-th"></i><span>Mượn trả</span></a></li>
                     </ul>

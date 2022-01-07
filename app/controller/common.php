@@ -10,10 +10,7 @@ if (!isset($_GET['url'])) {
 } else {
     $url = $_GET['url'];
     switch ($url) {
-            // quản lý sách
-        case 'book':
-            include_once 'bookCtrl.php';
-            break;
+        // quản lý sách
         case 'library_search':
             include_once 'library_search.php';
             break;

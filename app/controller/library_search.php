@@ -1,15 +1,21 @@
 <?php
     class Library_search{
-      
-        // function searchDataBook(){
-        //     echo 'aaaaaaaaaaaâ';
-        //     $category =$_GET['category'];
-        //     $name =$_GET['name_book'];
-        //     include_once "app/model/book.php";
-        //     $getBook = new Book();
-        //     $row = $getBook->getDataNoCate("books",$name);
-        //     include_once 'app/view/book/book_view.php';  
-        // }
+     
+        function searchDataBook(){
+            
+            include_once "app/model/book.php";
+            $category = 0;
+            $name = '';
+            if(isset( $_GET['category'])){
+                $category =$_GET['category'];
+            }
+            if(isset( $_GET['name_book'])) {
+                $name =$_GET['name_book'];
+            }
+            $getBook = new Book();
+            $row = $getBook->getAll("books", $name,$category);
+            include_once 'app/view/book/book_view.php';  
+        }
         function view_detail_book(){
             $id =$_GET['id'];
             include_once "app/model/book.php";
@@ -22,5 +28,6 @@
         }
     }
     $book = new Library_search();
+    
     $method = $_GET['method'];
     $book->$method();
