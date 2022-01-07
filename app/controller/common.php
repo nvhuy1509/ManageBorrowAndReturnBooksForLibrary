@@ -30,7 +30,11 @@
             case 'muontra':
                 include_once 'muontraCtrl.php';
                 break;
-
+            //Lịch sử mượn sách
+            case 'history':
+                include_once 'historyCtrl.php';
+                break;
         }
     }
+    
     include_once 'app/view/header&footer/footer_view.php';
