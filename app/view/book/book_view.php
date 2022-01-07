@@ -35,9 +35,13 @@
     
     
       <div style = "margin-top: 3%;  margin-left: 1%;  margin-bottom: 5%">
-          <?php echo '<b>Số quyển sách tìm thấy: '.count($row).' </b>' ?>   
-          <button class="btn btn-sm btn-social btn-primary" align="right" > <i class="fa fa-plus"></i> Thêm mới
-            </button>
+            <div>
+              <?php echo '<b>Số quyển sách tìm thấy: '.count($row).' </b>' ?>   
+            </div>
+            <div>
+              <button class="btn btn-sm btn-social btn-primary" style = " right:10px; position:absolute;"> <i class="fa fa-plus"></i> Thêm mới   </button>
+            </div>
+         
       </div>
     
       <div id="" class="tab-pane fade in active">
@@ -53,9 +57,10 @@
               </tr>
             </thead>
             <tbody>    
-            <?php  foreach($row as $value){?>
+            <?php $stt = 1;
+              foreach($row as $value){?>
               <tr>
-                <td class="text-center align-middle"><?php echo $value['id'] ?></td>
+                <td class="text-center align-middle"><?php echo $stt++ ?></td>
                 <td class="text-left align-middle"><?php echo $value['name'] ?></td>
                 <td class="text-left align-middle"><?php echo $value['category'] ?></td>
                 <td class="text-center align-middle"><?php echo $value['author'] ?></td>
