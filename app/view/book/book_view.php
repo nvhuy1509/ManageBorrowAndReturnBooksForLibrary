@@ -67,9 +67,8 @@
                 <td class="text-center align-middle"><?php echo $value['quantity'] ?></td>
                 <td class="text-center align-middle">
                 <a type="button" class="btn btn-primary" href="" > Sửa</a>
-                  <button type="button" class="btn btn-danger"> Xóa</button>
-                  <a class="btn btn-default" title="Xem chi tiết" href="?url=library_search&method=view_detail_book&id=<?php echo $value['id'] ?>">Chi tiết<i class="fa fa-eye"></i>
-                  </a>
+                <a class="btn btn-danger" title="Xóa" href="?url=library_search&method=delete_book&id=<?php echo $value['id'] ?> " onclick="return confirm('Bạn có chắc chắn muốn xóa?')"> Xóa<i class="fa fa-trash "></i></a>
+                <a class="btn btn-default" title="Xem chi tiết" href="?url=library_search&method=view_detail_book&id=<?php echo $value['id'] ?>">Chi tiết<i class="fa fa-eye"></i></a>
                 </td>
               </tr>
               <?php }

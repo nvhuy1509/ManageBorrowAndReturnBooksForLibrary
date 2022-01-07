@@ -16,12 +16,24 @@
             $row = $getBook->getAll("books", $name,$category);
             include_once 'app/view/book/book_view.php';  
         }
+
         function view_detail_book(){
             $id =$_GET['id'];
             include_once "app/model/book.php";
             $getBook = new Book();
             $row = $getBook->getDetailBook("books",$id);
             include_once 'app/view/book/book_detail.php';  
+        }
+        
+        function delete_book(){
+            $id =$_GET['id'];
+            include_once "app/model/book.php";
+            $getBook = new Book();
+            $row = $getBook->DeleteBook("books",$id);
+            include_once 'app/view/book/book_view.php';  
+            print_r('aaaaaaaaaaa');
+            die();
+           
         }
         function search_user(){
             

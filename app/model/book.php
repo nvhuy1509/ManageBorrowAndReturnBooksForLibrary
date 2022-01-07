@@ -41,4 +41,22 @@
           
             return $row;
         }
+
+        function DeleteBook($table,$id){
+            $delete = "delete from ".$table." where id=".$id;
+            $querydelete =  mysqli_query($this->__conn, $delete);
+            $sql = "select * from ".$table."";
+            $query =  mysqli_query($this->__conn, $sql);
+            $result = array();
+            while ($row =  mysqli_fetch_assoc($query)){
+                foreach($this->category as $key=>$value){
+                    if($row['category']==$key){
+                        $row['category']=$value;
+                    }
+                }
+                $result[] = $row;
+            }
+            
+            return $result;
+        }
     }
