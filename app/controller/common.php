@@ -38,4 +38,3 @@ if (!isset($_GET['url'])) {
     }
 }
 include_once 'app/view/header&footer/footer_view.php';
-

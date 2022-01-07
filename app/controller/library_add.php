@@ -112,10 +112,95 @@ class Library_add
         include_once 'app/view/book/book_add_complete.php';
     }
     
-    function add_user()
+    function view_add_input()
     {
+        $types = array(
+            1 => 'student',
+            2 => 'teacher'
+        );
+        include_once 'app/view/user/user_add_input.php';
+    }
+    function view_add_confirm()
+    {
+        $types = array(
+            1 => 'student',
+            2 => 'teacher'
+        );
+        if (isset($_POST['btn_xac_nhan'])) {
+            $name               = $_POST['name_user'];
+            $id                 = $_POST['id_user'];
+            $type               = $_POST['type_user'];
+            $description        = $_POST['description'];
+            $this->file_name    = $_FILES['file_user']['name'];
+            $file_view          = $_FILES['file_user']['name'];
+            move_uploaded_file($_FILES['file_user']['tmp_name'], "web/avatar/tmp/" . $_FILES['file_user']['name']);
+            include_once 'app/view/user/user_add_confirm.php';
+        }
+    }
+
+    function view_add_complete()
+    {
+        try {
+            include_once "app/model/user.php";
+            if (isset($_POST['btn_cf'])) {
+                $name           = $_POST['name_user'];
+                $id             = $_POST['id_user'];
+                $type           = $_POST['type_user'];
+                $description    = $_POST['description'];
+                $file_name      = $_POST['file_user'];
+                if (!is_dir("web/avatar/user")) {
+                    mkdir("web/avatar/user");
+                }
+                rename('web/avatar/tmp/' . $file_name, "web/avatar/user/" . $file_name);
+                $data = array(
+                    'name'          =>  $name,
+                    'type'          =>  $type,
+                    'user_id'       =>  $id,
+                    'avatar'        =>  $file_name,
+                    'description'   =>  $description,
+                );
+                $insert = new User();
+                $insert->Add('users', $data);
+                include_once 'app/view/user/user_add_complete.php';
+            }
+            else if(isset($_POST['btn_back'])){
+                $name               = $_POST['name_user'];
+                $id                 = $_POST['id_user'];
+                $type               = $_POST['type_user'];
+                $description        = $_POST['description'];
+                
+                $types = array(
+                    1 => 'student',
+                    2 => 'teacher'
+                );
+                include_once 'app/view/user/user_add_input.php';
+            }else{
+                die('here');
+            }
+            
+        } catch (Exception $e) {
+            echo $e;
+        }
+    }
+
+
+    function back_confirm(){
+        $types = array(
+            1 => 'student',
+            2 => 'teacher'
+        );
+        if (isset($_POST['btn_back'])) {
+            $name               = $_POST['name_user'];
+            $id                 = $_POST['id_user'];
+            $type               = $_POST['type_user'];
+            $description        = $_POST['description'];
+            $this->file_name    = $_FILES['file_user']['name'];
+            $file_view          = $_FILES['file_user']['name'];
+            move_uploaded_file($_FILES['file_user']['tmp_name'], "web/avatar/tmp/" . $_FILES['file_user']['name']);
+        }
+        include_once 'app/view/user/user_add_input.php';
     }
 }
-$book_add = new Library_add();
+$user_add = new Library_add();
 $method = $_GET['method'];
-$book_add->$method();
+$user_add->$method();
