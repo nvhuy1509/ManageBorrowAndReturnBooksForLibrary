@@ -88,7 +88,7 @@
                     <li><a href="?url=user"><i class="fa fa-user-plus"></i><span>Người dùng</span></a></li>
                     <li><a href="?url=muontra&method=getAll"><i class="fa fa-th"></i><span>Mượn trả</span></a></li>
                     <li><a href="?url=history"><i class="fa fa-th"></i><span>Lịch sử mượn sách</span></a></li>
-
+                    <li><a href="app/controller/history_user.php"><i class="fa fa-th"></i><span>Lịch sử người dùng</span></a></li>
                 </ul>
         </section>
         <!-- /.sidebar -->
