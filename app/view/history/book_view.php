@@ -24,7 +24,6 @@
         <select name='book' style= "width: 138px; height: 30px; margin-bottom: 10px;">
         <?php
           foreach($row as $x => $val) {
-            echo  "<option 'value'=".$val['id'].">  </option>";
             echo  "<option 'value'=".$val['id']."> $val[name] </option>";
             
           }
@@ -37,7 +36,7 @@
         <select name='user' style= "width: 138px; height: 30px; margin-bottom: 10px;">
           <?php
               foreach($user as $x => $val) {
-                echo  "<option 'value'=".$val['id'].">  </option>";
+               
                 echo  "<option 'value'=".$val['id']."> $val[name] </option>";
               }
           ?> 
