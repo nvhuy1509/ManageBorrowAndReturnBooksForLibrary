@@ -91,6 +91,7 @@
                     <li><a href="?url=history"><i class="fa fa-th"></i><span>Lịch sử mượn sách</span></a></li>
                     <li><a href="app/controller/history_user.php"><i class="fa fa-th"></i><span>Lịch sử người dùng</span></a></li>
                     <li><a href="?url=ledger"><i class="fas fa-book"></i><span> Sổ cái</span></a></li>
+                    <li><a href="?url=userRS&method=getDataResetPassword"><i class="fa fa-key"></i><span>Cấp lại mật khẩu</span></a></li>
                 </ul>
         </section>
         <!-- /.sidebar -->

@@ -1,11 +1,16 @@
 <?php
 session_start();
-
+include_once "app/common/define.php";
 if (!isset($_SESSION['username'])) {
-    header('Location: login.php');
+    $url = $_GET['url'];
+    if($url =="userRS" || $url ="submitRequestResetPass"){
+        include_once 'resetPWCtrl.php';
+        exit();
+    }else
+        header('Location: login.php');
 }
 
-include_once "app/common/define.php";
+
 include_once 'app/view/header&footer/head_view.php';
 if (!isset($_GET['url'])) {
     include_once 'bookCtrl.php';
@@ -32,6 +37,12 @@ if (!isset($_GET['url'])) {
         case 'user':
             include_once 'userCtrl.php';
             break;
+
+            //reset Password
+        case 'userRS':
+            include_once 'resetPWCtrl.php';
+            break;
+            
         case 'library_edit':
             include_once 'library_edit.php';
             break;
