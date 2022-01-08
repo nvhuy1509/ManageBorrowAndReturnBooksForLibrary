@@ -25,7 +25,7 @@
                 <br/>
                 <input type="submit" name="btn_submit" value="Đăng nhập"/>
             </form>
-            <a href="#">Forget Password</a>
+            <a class="btn btn-default" title="Forget Password" href="index.php?url=userRS&method=getView">Forget Password</a>
         </div>
 	</div>
 </body>
