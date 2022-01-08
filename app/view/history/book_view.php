@@ -22,11 +22,14 @@
        <div  style = "margin-top: 3%; margin-left: 40px " align="center" >
         <label>Sách </label>
         <select name='book' style= "width: 138px; height: 30px; margin-bottom: 10px;">
+        <!-- <option value="<?php echo $val['id'] ?>"></option>; -->
         <?php
           foreach($row as $x => $val) {
-  
-            echo  "<option 'value'=".$val['id']."> $val[name] </option>";
-            
+
+            ?>
+            <option value="<?php echo $val['id'] ?>"><?php echo $val['name'] ?></option>;
+            <?php
+
           }
         ?> 
 				</select>
@@ -35,10 +38,15 @@
       <div style="text-align: center">
       <label>Người dùng </label>
         <select name='user' style= "width: 138px; height: 30px; margin-bottom: 10px;">
+        <!-- <option value="<?php echo $val['id'] ?>"></option>; -->
           <?php
+          
               foreach($user as $x => $val) {
-               
-                echo  "<option 'value'=".$val['id']."> $val[name] </option>";
+
+                ?>
+                <option value="<?php echo $val['id'] ?>"><?php echo $val['name'] ?></option>;
+                <?php
+
               }
           ?> 
 				</select>
@@ -66,7 +74,7 @@
           </thead>
           <tbody>    
             <?php 
-            $count=0;
+            $count=1;
             ?>
           <?php  if(isset($book)) foreach($book as $value){?>
             <tr>

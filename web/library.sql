@@ -86,16 +86,18 @@ CREATE TABLE `book_transactions` (
 -- Cấu trúc bảng cho bảng `users`
 --
 
-CREATE TABLE `users` (
-  `id` int(10) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(10) UNSIGNED NOT NULL ,
   `type` int(1) NOT NULL,
   `name` varchar(250) NOT NULL,
   `user_id` char(15) NOT NULL,
   `avatar` varchar(250) DEFAULT NULL,
-  `description` text DEFAULT NULL,
-  `updated` datetime NOT NULL DEFAULT current_timestamp(),
-  `created` datetime NOT NULL DEFAULT current_timestamp()
+  `description` text,
+  `created` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
+  `updated` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -135,7 +137,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `books`

@@ -46,7 +46,7 @@
                                                                     if (isset($_SESSION['file_tmp_name'])) {
                                                                         echo FULL_SITE_ROOT . "web/avatar/tmp/" . $_SESSION['avatar'];
                                                                     } else {
-                                                                        echo FULL_SITE_ROOT . "web/avatar/" . $row['id'] . "/" . $_SESSION['avatar'];
+                                                                        echo FULL_SITE_ROOT . "web/avatar/user/" . $row['id'] . "/" . $_SESSION['avatar'];
                                                                     }
 
                                                                     ?>" alt="">
@@ -65,7 +65,7 @@
                     <div class="form-group <?php echo (!empty($error['description']) ? 'has-error' : '') ?>">
                         <label for="" class="col-sm-4 text-right">Mô tả</label>
                         <div class="col-sm-8">
-                            <input name="description" value="<?php echo $_SESSION['description']?>" class="form-control" id="" placeholder="Nhập mô tả">
+                            <textarea name="description" value="<?php echo $_SESSION['description']?>" class="form-control" id="" placeholder="Nhập mô tả"><?php echo $_SESSION['description']?></textarea>
                             <?php echo (!empty($error['description'])) ?  '<p class="text-validate"> * ' . $error['description'] . '</p>' : '' ?>
                         </div>
                     </div>

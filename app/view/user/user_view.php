@@ -66,7 +66,7 @@
                 <td class="text-center align-middle"><?php echo $value['user_id'] ?></td>
                 <!-- <td class="text-center align-middle"><?php echo $value['avatar'] ?></td> -->
                 <td>
-                  <img width="50px" height="50px" src="<?php echo FULL_SITE_ROOT . "web/avatar/user/" .$value['user_id'] ."/" . $value['avatar'] ?>" alt="" srcset="">
+                  <img width="50px" height="50px" src="<?php echo FULL_SITE_ROOT . "web/avatar/user/" .$value['id'] ."/" . $value['avatar'] ?>" alt="" srcset="">
                 </td>
                 <td class="text-center align-middle"><?php echo $value['description'] ?></td>
                 <td class="text-center align-middle">

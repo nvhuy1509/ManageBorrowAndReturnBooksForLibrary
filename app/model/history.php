@@ -9,7 +9,7 @@
                 $this->__conn = $connect->getInstance();
             }
         }
-        
+
         function getAll($table){
             $sql = "select * from ".$table;
             $query =  mysqli_query($this->__conn, $sql);
@@ -35,8 +35,9 @@
         }
 
         function getDataBook($book, $user) {
-            $sql = "select books.name as book_name, (select count(*) from book_transactions,books where book_transactions.book_id='.$book.') as count, book_transactions.borrowed_date, book_transactions.return_plan_date,
-            book_transactions.return_actual_date,users.name as user_name from users,book_transactions,books where book_transactions.user_id= '.$user.' and book_transactions.book_id= '.$book.'" ;
+            $sql = "select books.name as book_name, (select count(*) from book_transactions,books where book_transactions.book_id='.$book.' and books.id=book_transactions.book_id) as count, book_transactions.borrowed_date, book_transactions.return_plan_date,
+            book_transactions.return_actual_date,users.name as user_name
+            from users,book_transactions,books where  book_transactions.user_id= '.$user.' and book_transactions.book_id='.$book.' and books.id=book_transactions.book_id and  users.id=book_transactions.user_id" ;
             $query =  mysqli_query($this->__conn, $sql);
             $result = array();
             while ($row =  mysqli_fetch_assoc($query)){

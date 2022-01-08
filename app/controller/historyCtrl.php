@@ -11,7 +11,8 @@
                 $book = $getBook->getDataBook($_GET['book'],$_GET['user']);
                 
              }
-            
+         
+           
             include_once 'app/view/history/book_view.php';
         }
       

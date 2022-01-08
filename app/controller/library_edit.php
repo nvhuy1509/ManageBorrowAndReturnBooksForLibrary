@@ -248,7 +248,7 @@ class Library_edit
                     $file_view = $_SESSION['avatar'];
                 } else {
                     $_SESSION['check'] = false;
-                    $file_path = FULL_SITE_ROOT . "web/avatar/" . $id . "/" . $_SESSION['avatar'];
+                    $file_path = FULL_SITE_ROOT . "web/avatar/user/" . $id . "/" . $_SESSION['avatar'];
                     $file_view = $_SESSION['avatar'];
                 }
                 $_SESSION['description']  = $_POST['description'];
@@ -271,7 +271,7 @@ class Library_edit
             $file_path = FULL_SITE_ROOT . "web/avatar/tmp/" . $file_view;
         } else {
             $file_view = $_SESSION['avatar'];
-            $file_path = FULL_SITE_ROOT . "web/avatar/" . $id . "/" . $file_view;
+            $file_path = FULL_SITE_ROOT . "web/avatar/user/" . $id . "/" . $file_view;
         }
         include_once 'app/view/user/user_edit_confirm.php';
     }
@@ -286,17 +286,21 @@ class Library_edit
             $description = $_POST['description'];
             $file_name = $_POST['file_user'];
 
-            if (!file_exists("web/avatar/" . $_GET["id"] . "/" . $file_name)) {
-                if (!is_dir("web/avatar/" . $_GET["id"] . "/")) {
-                    mkdir("web/avatar/" . $_GET["id"] . "/");
+           
+            if (!file_exists("web/avatar/user/" . $_GET["id"] . "/" . $file_name)) {
+                if (!is_dir("web/avatar/user/" . $_GET["id"] . "/")) {
+                    mkdir("web/avatar/user/" . $_GET["id"] . "/");
+
                 }
-                rename('web/avatar/tmp/' . $file_name, "web/avatar/" . $_GET["id"] . "/" . $file_name);
+                rename('web/avatar/tmp/' . $file_name, "web/avatar/user/" . $_GET["id"] . "/" . $file_name);
             }
             include_once "app/model/user.php";
             $getUser = new User();
             $row = $getUser->GetSingle("users", $_GET["id"]);
-            if ($row['avatar'] !== $file_name) {
-                unlink("web/avatar/" . $_GET["id"] . "/" . $row['avatar']);
+
+            if($row['avatar']!==$file_name){
+                unlink("web/avatar/user/" . $_GET["id"] . "/" . $row['avatar']);
+
             }
             $data = array(
                 'name' => $name,
@@ -307,6 +311,7 @@ class Library_edit
             );
             $update = new User();
             $update->Update('users', $data, 'id', $_GET['id']);
+           
         }
         include_once 'app/view/user/user_edit_complete.php';
         unset($_SESSION['user_name']);

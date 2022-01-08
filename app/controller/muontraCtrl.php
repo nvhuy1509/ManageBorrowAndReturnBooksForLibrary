@@ -29,6 +29,12 @@
         }
     }
     $muontra = new MuontraCtrl();
+    if(isset($_GET['reset'])){
+        $_GET['search-book'] = "";
+        $_GET['search-user'] = "";
+        $_GET['search-status'] = "";
+        $_GET['search-overdue'] = "";
+    }
     $method = $_GET['method'];
     $muontra->$method();
 
