@@ -64,23 +64,20 @@ class Library_edit
 
             $type_allow = array('png', 'jpg', 'jpeg', 'gif');
             $type_file = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
-            if(isset($_GET['back'])) {
-                if (file_exists('web/avatar/tmp/'.$_POST['abc'])) {
+            if (isset($_GET['back'])) {
+                if (file_exists('web/avatar/tmp/' . $_POST['abc'])) {
                     $type_file = pathinfo($_POST['abc'], PATHINFO_EXTENSION);
-                }
-                else{
+                } else {
                     $type_file = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
                 }
-                
-            }
-            else{
+            } else {
                 if ((!file_exists($_FILES["file"]["tmp_name"]))) {
                     $error['type'] = "Hãy chọn ảnh";
                 } else if (!in_array(strtolower($type_file), $type_allow)) {
                     $error['type'] = "File không thích hợp";
                 }
             }
-           
+
             if (empty($error)) {
                 move_uploaded_file($_FILES['file']['tmp_name'], "web/avatar/tmp/" . $_FILES['file']['name']);
                 $_SESSION['book_name'] = $book_name;
@@ -90,8 +87,8 @@ class Library_edit
                 $_SESSION['book_quantity'] = $book_quantity;
                 // $_SESSION['tmp_name'] = $_FILES["file"]["tmp_name"];
                 $_SESSION['book_avatar'] = $_FILES["file"]["name"];
-                
-                header("Location: ?url=library_edit_book&method=edit_book_confirm&id=$id");
+
+                header("Location: ?url=library_edit&method=edit_book_confirm&id=$id");
             }
         }
         include_once "app/view/book/book_update_input.php";
@@ -99,13 +96,21 @@ class Library_edit
 
     function edit_book_confirm()
     {
-
+        $category = array(
+            1 => 'Khoa học',
+            2 => 'Tiểu thuyết',
+            3 => 'Manga',
+            4 => 'Sách giáo khoa'
+        );
         include_once "app/model/book.php";
         $id = $_GET['id'];
-
         $name =  $_SESSION['book_name'];
         $author =  $_SESSION['book_author'];
-        $type = $_SESSION['book_category'];
+        foreach($category as $key => $value) {
+            if($_SESSION['book_category'] == $key) {
+                $type = $value;
+            }
+        }
         $quantity = $_SESSION['book_quantity'];
         $description = $_SESSION['book_description'];
         $file_name =  $_SESSION['book_avatar'];
@@ -162,7 +167,7 @@ class Library_edit
     // quản lý người dùng-> sửa
     function view_edit_input()
     {
-        
+
         $id = $_GET['id'];
         include_once "app/model/user.php";
         $getUser = new User();
@@ -172,21 +177,21 @@ class Library_edit
             1 => 'student',
             2 => 'teacher'
         );
-       
-        if(!isset($_GET['back'])){
-            $_SESSION['user_name']=$row['name'];
-            $_SESSION['user_id']=$row['user_id'];
-            $_SESSION['user_type']=$row['type'];
-            $_SESSION['avatar']=$row['avatar'];
-            $_SESSION['description']=$row['description'];
+
+        if (!isset($_GET['back'])) {
+            $_SESSION['user_name'] = $row['name'];
+            $_SESSION['user_id'] = $row['user_id'];
+            $_SESSION['user_type'] = $row['type'];
+            $_SESSION['avatar'] = $row['avatar'];
+            $_SESSION['description'] = $row['description'];
         }
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $error = array();
             if (empty($_POST['user_name'])) {
                 $error['user_name'] = "Hãy nhập họ và tên";
-                $_SESSION['user_name']=$_POST['user_name'];
+                $_SESSION['user_name'] = $_POST['user_name'];
             } else {
-                if (strlen($_POST['user_name']) >100 ) {
+                if (strlen($_POST['user_name']) > 100) {
                     $error['user_name'] = "Tên nhỏ hơn 100 kí tự";
                 } else {
                     $_SESSION['user_name'] = $_POST['user_name'];
@@ -194,34 +199,31 @@ class Library_edit
             }
             if (empty($_POST['user_type'])) {
                 $error['user_type'] = "Hãy chọn phân loại";
-                $_SESSION['user_id']=$_POST['user_type'];
+                $_SESSION['user_id'] = $_POST['user_type'];
             } else {
-                $_SESSION['user_id']=$_POST['user_type'];
+                $_SESSION['user_id'] = $_POST['user_type'];
             }
             if (empty($_POST['user_id'])) {
                 $error['user_id'] = "Hãy nhập ID";
-                $_SESSION['user_id']=$_POST['user_id'];
-            } 
-            else if (strlen($_POST['user_id']) > 10) {
-                    $error['user_id'] = "Id khong qua 10";
-                    $_SESSION['user_id']=$_POST['user_id'];
-                } 
-            else if ($getUser->CheckUserId("users", $_POST['user_id'], $id) != 0) {
+                $_SESSION['user_id'] = $_POST['user_id'];
+            } else if (strlen($_POST['user_id']) > 10) {
+                $error['user_id'] = "Id khong qua 10";
+                $_SESSION['user_id'] = $_POST['user_id'];
+            } else if ($getUser->CheckUserId("users", $_POST['user_id'], $id) != 0) {
                 $error['user_id'] = 'Mã đã tồn tại';
-                $_SESSION['user_id']=$_POST['user_id'];
-                } 
-            else {
+                $_SESSION['user_id'] = $_POST['user_id'];
+            } else {
                 $_SESSION['user_id']  = $_POST['user_id'];
-                }
+            }
             if (empty($_POST['description'])) {
                 $error['description'] = "Hãy nhập mô tả chi tiết";
-                $_SESSION['description']=$_POST['description'];
+                $_SESSION['description'] = $_POST['description'];
             } else {
                 if (strlen($_POST['description']) > 1000) {
                     $error['description'] = "Mô tả nhỏ hơn 1000 kí tự";
-                    $_SESSION['description']=$_POST['description'];
+                    $_SESSION['description'] = $_POST['description'];
                 } else {
-                    $_SESSION['description']=$_POST['description'];
+                    $_SESSION['description'] = $_POST['description'];
                 }
             }
             if (empty($error)) {
@@ -233,22 +235,19 @@ class Library_edit
                     $_SESSION['file_tmp_name'] = $_FILES['file_user']['tmp_name'];
                     move_uploaded_file($_SESSION['file_tmp_name'], "web/avatar/tmp/" . $_SESSION['avatar']);
                     $file_path = FULL_SITE_ROOT . "web/avatar/tmp/" . $_SESSION['avatar'];
-                  
-                }else if(isset($_GET['back'])){
+                } else if (isset($_GET['back'])) {
                     $_SESSION['check'] = true;
                     $file_path = FULL_SITE_ROOT . "web/avatar/tmp/" . $_SESSION['avatar'];
                     $file_view = $_SESSION['avatar'];
-                }else{
+                } else {
                     $_SESSION['check'] = false;
                     $file_path = FULL_SITE_ROOT . "web/avatar/" . $id . "/" . $_SESSION['avatar'];
                     $file_view = $_SESSION['avatar'];
                 }
                 $_SESSION['description']  = $_POST['description'];
                 header('Location: ?url=library_edit&method=view_edit_confirm&id=' . $id);
-                
             } else {
             }
-            
         }
         include_once 'app/view/user/user_edit_input.php';
     }
@@ -259,8 +258,8 @@ class Library_edit
         $id_user = $_SESSION['user_id'];
         $type = $_SESSION['user_type'];
         $description = $_SESSION['description'];
-        
-        if ( $_SESSION['check'] == true) {
+
+        if ($_SESSION['check'] == true) {
             $file_view = $_SESSION['avatar'];
             $file_path = FULL_SITE_ROOT . "web/avatar/tmp/" . $file_view;
         } else {
@@ -272,14 +271,14 @@ class Library_edit
     function view_edit_complete()
     {
         include_once "app/model/user.php";
-       
+
         if (isset($_POST['btn_cf'])) {
             $name = $_POST['name_user'];
             $id_user = $_POST['id_user'];
             $type = $_POST['type_user'];
             $description = $_POST['description'];
             $file_name = $_POST['file_user'];
-           
+
             if (!file_exists("web/avatar/" . $_GET["id"] . "/" . $file_name)) {
                 if (!is_dir("web/avatar/" . $_GET["id"] . "/")) {
                     mkdir("web/avatar/" . $_GET["id"] . "/");
@@ -289,7 +288,7 @@ class Library_edit
             include_once "app/model/user.php";
             $getUser = new User();
             $row = $getUser->GetSingle("users", $_GET["id"]);
-            if($row['avatar']!==$file_name){
+            if ($row['avatar'] !== $file_name) {
                 unlink("web/avatar/" . $_GET["id"] . "/" . $row['avatar']);
             }
             $data = array(

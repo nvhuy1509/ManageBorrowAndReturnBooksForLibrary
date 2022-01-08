@@ -69,7 +69,7 @@
                 <td class="text-center align-middle"><?php echo $value['author'] ?></td>
                 <td class="text-center align-middle"><?php echo $value['quantity'] ?></td>
                 <td class="text-center align-middle">
-                <a type="button" class="btn btn-primary "  href="?url=library_edit_book&method=edit_book_input&id=<?php echo $value['id'] ?>">
+                <a type="button" class="btn btn-primary "  href="?url=library_edit&method=edit_book_input&id=<?php echo $value['id'] ?>">
 
 Sửa
 </a>

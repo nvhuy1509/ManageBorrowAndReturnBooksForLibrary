@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="web/css/book_update_confirm.css">
 <div id="wrapper">
-    <form action="?url=library_edit_book&method=edit_book_complete&id=<?php echo $id ?>" method="post" enctype="multipart/form-data">
+    <form action="?url=library_edit&method=edit_book_complete&id=<?php echo $id ?>" method="post" enctype="multipart/form-data">
         <div class="book-name">
             <label for="book_name">Tên sách</label>
             <input type="text" name="book_name" id="book-name" value="<?php echo $name ?>" style="pointer-events: none;">
@@ -27,7 +27,7 @@
 
             <img src="<?php echo FULL_SITE_ROOT."web/avatar/tmp/".$file_name ?>" alt="" width="100" height="100">
         </div>
-        <a href="?url=library_edit_book&method=edit_book_input&id=<?php echo $id ?>&back" type="button" class="back">Sửa lại</a>
+        <a href="?url=library_edit&method=edit_book_input&id=<?php echo $id ?>&back" type="button" class="back">Sửa lại</a>
         <input type="submit" name="btn_confirm" value="Xác nhận">
     </form>
 </div>
