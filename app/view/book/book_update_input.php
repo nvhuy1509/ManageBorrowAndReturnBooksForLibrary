@@ -3,7 +3,6 @@
 <script src="web/js/shownameimage.js"></script>
 <div id="wrapper">
     <form action="" enctype="multipart/form-data" method="POST">
-        <!-- luc m submit, thì nó gàn method=edit_confirm_boo -->
         <div class="book-name">
             <label for="book_name">Tên sách</label>
             <input type="text" name="book_name" id="book_name" value="<?php echo isset($_SESSION['book_name']) ? $_SESSION['book_name'] : "" ?>">
