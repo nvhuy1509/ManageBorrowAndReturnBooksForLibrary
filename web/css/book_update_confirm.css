@@ -1,0 +1,78 @@
+#wrapper {
+    max-width: 500px;
+    margin: 0px auto;
+    padding-top: 20px;
+}
+
+form {
+    display: block;
+}
+
+.book-name {
+    margin-bottom: 20px;
+}
+
+.book-name input {
+    margin-left: 31px;
+}
+
+.book-category {
+    margin-bottom: 20px;
+}
+
+.book-category input {
+    margin-left: 36px;
+    width: 33%;
+}
+
+.book-author {
+    margin-bottom: 20px;
+}
+
+.book-author input {
+    margin-left: 43px;
+
+}
+
+.book-quantity {
+    margin-bottom: 20px;
+}
+
+.book-quantity input {
+    margin-left: 33px;
+    width: 10%;
+}
+
+.book-description {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.book-description label {
+
+    position: absolute;
+    left: 0;
+}
+
+.book-description input {
+    margin-left: 90px;
+}
+
+.book-avatar {
+    display: flex;
+}
+
+.book-avatar img {
+    margin-left: 50px;
+
+}
+
+input[type='submit'] {
+    background: #1a73e8;
+    padding: 5px 45px 10px;
+    margin: 50px 150px;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 3px;
+    border: none;
+}
