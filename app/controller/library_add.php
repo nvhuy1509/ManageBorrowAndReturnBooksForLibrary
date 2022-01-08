@@ -132,7 +132,7 @@ class Library_add
         $data['type_user'] = isset($_POST['type_user']) ? $_POST['type_user'] : '';
         $data['id_user'] = isset($_POST['id_user']) ? $_POST['id_user'] : '';
         $data['description'] = isset($_POST['description']) ? $_POST['description'] : '';
-        $data['file_user'] = isset($_FILES['file_user']['name_user']) ? $_FILES['file_user']['name_user'] : '';
+        $data['file_user'] = isset($_FILES['file_user']['name']) ? $_FILES['file_user']['name'] : '';
         
 
         if (empty($data['name_user'])) {
