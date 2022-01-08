@@ -53,6 +53,7 @@
             </div>
 
         </div>
+        
         <p style="color: red; font-style:italic; margin-left: 88px"><?php echo (!empty($error['type']) ? $error['type'] : "") ?></p>
         <input type="submit" name="btn_update" value="Xác nhận">
     </form>

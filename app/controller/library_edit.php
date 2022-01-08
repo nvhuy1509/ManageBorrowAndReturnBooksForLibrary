@@ -157,6 +157,7 @@ class Library_edit
             $test->Update('books', $book, 'id', $id);
         }
         
+        
         $dir = 'web/avatar/tmp/';
         foreach (glob($dir . '*.*') as $v) {
             unlink($v);

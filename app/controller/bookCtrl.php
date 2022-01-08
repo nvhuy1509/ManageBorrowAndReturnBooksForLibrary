@@ -12,5 +12,4 @@
     $book = new bookCtrl();
     $method = isset($_GET['method'])? $_GET['method']: 'getAll';
     $book->$method();
-    
 

@@ -29,6 +29,7 @@
         </div>
         <a href="?url=library_edit&method=edit_book_input&id=<?php echo $id ?>&back" type="button" class="back">Sửa lại</a>
         <input type="submit" name="btn_confirm" value="Xác nhận">
+
     </form>
 </div>
 
