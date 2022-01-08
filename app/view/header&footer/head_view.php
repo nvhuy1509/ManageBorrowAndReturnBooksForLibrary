@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="<?php echo FULL_SITE_ROOT ?>web/css/_all-skins.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../../../web/css/viewInputSearch.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 
 <body class="skin-blue sidebar-mini skin-green-light">
@@ -89,6 +90,7 @@
                     <li><a href="?url=muontra&method=getAll"><i class="fa fa-th"></i><span>Mượn trả</span></a></li>
                     <li><a href="?url=history"><i class="fa fa-th"></i><span>Lịch sử mượn sách</span></a></li>
                     <li><a href="app/controller/history_user.php"><i class="fa fa-th"></i><span>Lịch sử người dùng</span></a></li>
+                    <li><a href="?url=ledger"><i class="fas fa-book"></i><span> Sổ cái</span></a></li>
                 </ul>
         </section>
         <!-- /.sidebar -->
