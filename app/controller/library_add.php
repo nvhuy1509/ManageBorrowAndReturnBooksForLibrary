@@ -115,18 +115,52 @@ class Library_add
     function view_add_input()
     {
         $types = array(
-            1 => 'student',
-            2 => 'teacher'
+            1 => 'Student',
+            2 => 'Teacher'
         );
         include_once 'app/view/user/user_add_input.php';
     }
     function view_add_confirm()
     {
         $types = array(
-            1 => 'student',
-            2 => 'teacher'
+            1 => 'Student',
+            2 => 'Teacher'
         );
-        if (isset($_POST['btn_xac_nhan'])) {
+        $error = array();
+        $data = array();
+        $data['name_user'] = isset($_POST['name_user']) ? $_POST['name_user'] : '';
+        $data['type_user'] = isset($_POST['type_user']) ? $_POST['type_user'] : '';
+        $data['id_user'] = isset($_POST['id_user']) ? $_POST['id_user'] : '';
+        $data['description'] = isset($_POST['description']) ? $_POST['description'] : '';
+        $data['file_user'] = isset($_FILES['file_user']['name_user']) ? $_FILES['file_user']['name_user'] : '';
+        
+
+        if (empty($data['name_user'])) {
+            $error['name_user'] = 'Hãy nhập tên người dùng';
+        }
+        if (strlen($data['name_user']) > 100) {
+            $error['name_user'] = 'Không nhập quá 100 ký tự';
+        }
+        if (empty($data['type_user'])) {
+            $error['type_user'] = 'Hãy chọn loại người dùng';
+        }
+        if (empty($data['id_user'])) {
+            $error['id_user'] = 'Hãy nhập mô tả người dùng';
+        }
+        if (strlen($data['id_user']) > 10) {
+            $error['id_user'] = 'Không nhập quá 10 ký tự';
+        }
+        if (empty($data['description'])) {
+            $error['description'] = 'Hãy nhập mô tả người dùng';
+        }
+        if (strlen($data['description']) > 1000) {
+            $error['description'] = 'Không nhập quá 1000 ký tự';
+        }
+        if (empty($data['file_user'])) {
+            $error['file_user'] = 'Hãy chọn avatar';
+        }
+        
+        if (empty($error)) {
             $name               = $_POST['name_user'];
             $id                 = $_POST['id_user'];
             $type               = $_POST['type_user'];
@@ -135,7 +169,9 @@ class Library_add
             $file_view          = $_FILES['file_user']['name'];
             move_uploaded_file($_FILES['file_user']['tmp_name'], "web/avatar/tmp/" . $_FILES['file_user']['name']);
             include_once 'app/view/user/user_add_confirm.php';
-        }
+           
+        } else
+            include_once 'app/view/user/user_add_input.php';
     }
 
     function view_add_complete()
@@ -148,10 +184,10 @@ class Library_add
                 $type           = $_POST['type_user'];
                 $description    = $_POST['description'];
                 $file_name      = $_POST['file_user'];
-                if (!is_dir("web/avatar/user")) {
-                    mkdir("web/avatar/user");
+                if (!is_dir("web/avatar/user/" .$_POST['id_user'])) {
+                    mkdir("web/avatar/user/" .$_POST['id_user']);
                 }
-                rename('web/avatar/tmp/' . $file_name, "web/avatar/user/" . $file_name);
+                rename('web/avatar/tmp/' . $file_name, "web/avatar/user/" .$_POST['id_user'] ."/" .$file_name);
                 $data = array(
                     'name'          =>  $name,
                     'type'          =>  $type,
@@ -170,8 +206,8 @@ class Library_add
                 $description        = $_POST['description'];
                 
                 $types = array(
-                    1 => 'student',
-                    2 => 'teacher'
+                    1 => 'Student',
+                    2 => 'Teacher'
                 );
                 include_once 'app/view/user/user_add_input.php';
             }else{
@@ -186,8 +222,8 @@ class Library_add
 
     function back_confirm(){
         $types = array(
-            1 => 'student',
-            2 => 'teacher'
+            1 => 'Student',
+            2 => 'Teacher'
         );
         if (isset($_POST['btn_back'])) {
             $name               = $_POST['name_user'];
