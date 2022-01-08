@@ -23,6 +23,15 @@
           </a>
           
         </div>
+        <label>Chức vụ</label>
+        <select name='type' value=<?php echo (isset( $type) ?  $type : '')?>  >
+        <?php
+          $datacate = array(0 => "" ,1 => 'Học sinh', 2 => 'Giáo viên' );
+            foreach($datacate as $x => $val) {
+              echo "<option value='".$x."'".(isset( $type) && $type == $x  ?  'selected' : '') ."  > $val</option>";
+            }
+            ?> 
+          </select>
         <div class="col-md-6 text-right" style="position: relative">
           <input class="form-control" placeholder="Tìm kiếm..." />
           <button style="position: absolute; top: 0px; right: 16px" class="btn btn-primary">
@@ -75,9 +84,7 @@
                   <a type="button" class="btn btn-primary sua_sach" href="?url=library_edit&method=view_edit_input&id=<?php echo $value['id'] ?>">
                     Sửa
                   </a>
-                  <button type="button" class="btn btn-danger">
-                    Xóa
-                  </button>
+                  <a class="btn btn-danger" title="Xóa" href="?url=library_search&method=delete_user&id=<?php echo $value['id'] ?> " onclick="return confirm('Bạn có chắc chắn muốn xóa?')"> Xóa<i class="fa fa-trash "></i></a>
                   <a class="btn btn-default" title="Xem chi tiết" href="">
                     <i class="fa fa-eye"></i>
                   </a>
