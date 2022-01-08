@@ -25,9 +25,11 @@
         <!-- <option value="<?php echo $val['id'] ?>"></option>; -->
         <?php
           foreach($row as $x => $val) {
+
             ?>
             <option value="<?php echo $val['id'] ?>"><?php echo $val['name'] ?></option>;
             <?php
+
           }
         ?> 
 				</select>
@@ -40,9 +42,11 @@
           <?php
           
               foreach($user as $x => $val) {
+
                 ?>
                 <option value="<?php echo $val['id'] ?>"><?php echo $val['name'] ?></option>;
                 <?php
+
               }
           ?> 
 				</select>

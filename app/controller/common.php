@@ -14,6 +14,9 @@ if (!isset($_GET['url'])) {
         case 'library_search':
             include_once 'library_search.php';
             break;
+        case 'library_add':
+            include_once 'library_add.php';
+            break;
             // quản lý người dùng
         case 'user':
             include_once 'userCtrl.php';
@@ -35,4 +38,3 @@ if (!isset($_GET['url'])) {
     }
 }
 include_once 'app/view/header&footer/footer_view.php';
-

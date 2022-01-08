@@ -39,7 +39,9 @@
               <?php echo '<b>Số quyển sách tìm thấy: '.count($row).' </b>' ?>   
             </div>
             <div>
-              <button class="btn btn-sm btn-social btn-primary" style = " right:10px; position:absolute;"> <i class="fa fa-plus"></i> Thêm mới   </button>
+              <button class="btn btn-sm btn-social btn-primary" style = " right:10px; position:absolute;"> <i class="fa fa-plus"></i>
+                <a style="color: #fff" href = "?url=library_add&method=book_view_add_input">Thêm mới</a>    
+              </button>
             </div>
          
       </div>

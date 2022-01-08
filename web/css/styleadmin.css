@@ -106,3 +106,30 @@
 	width: 100px;
 	height: 100px;
 }
+.text-validate{
+    margin-bottom: 0px;
+    color: red;
+}
+.custom-input{
+    margin-top: 10px;
+    display: flex;
+}
+.inputfile-box {
+    position: relative;
+  }
+  
+  .inputfile {
+    display: none !important;
+  }
+  .file-box {
+    width: 70%;
+    border: 1px solid;
+    padding: 5px 0px 5px 5px;
+    box-sizing: border-box;
+    /* height: calc(2rem - 2px); */
+    margin: 0;
+  }
+  .error{
+      color: red;
+      margin-bottom: 0px;
+  }
