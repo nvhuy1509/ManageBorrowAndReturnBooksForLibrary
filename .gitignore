@@ -1,0 +1,5 @@
+# Ignore everything in this directory
+/web/book
+/web/tmp
+# Except this file
+!.gitignore
