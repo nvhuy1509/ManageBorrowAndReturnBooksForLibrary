@@ -54,12 +54,9 @@
         <div class="form-group row">
             <label style="font-size: large;" for="avatar" class="col-sm-4 col-form-label">Avatar</label>
             <div class="col-sm-5">
-                <div class="file-upload-wrapper" data-text="Chọn ảnh">
-                    <input id = "avatar" name="avatar" type="file" class="file-upload-field">
+                <div id = "overview" class="file-upload-wrapper" data-text="Chọn ảnh">
+                    <input onchange = "chooseFile()" id = "avatar" name="avatar" type="file" class="file-upload-field">
                 </div>
-                <!-- <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="customFile" name="avatar" accept="image/*">
-                </div> -->
             </div>
         </div>
         <div style="text-align:center" class="add-submit">
@@ -70,3 +67,14 @@
         <a class="btn btn-default" title="Xem chi tiết" onclick="history.back()">Quay lại<i class="fa fa-arrow-left"></i></a>
     </div>
 </div>
+
+<script type="text/javascript">
+    let div = document.getElementById("overview");
+    function chooseFile() {
+        var file = document.getElementById("avatar");
+        var fileName = file.files[0].name
+        // console.log(fileName);
+        div.setAttribute("data-text", fileName);
+        console.log(fileName)
+    }
+</script>
