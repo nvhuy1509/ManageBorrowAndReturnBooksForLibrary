@@ -68,4 +68,21 @@ class User
             return "Error: " . $sql . "<br>" . mysqli_error($this->__conn);
         }
     }
+    function DeleteUser($table,$id){
+        $delete = "delete from ".$table." where id=".$id;
+        $querydelete =  mysqli_query($this->__conn, $delete);
+        $sql = "select * from ".$table."";
+        $query =  mysqli_query($this->__conn, $sql);
+        $result = array();
+        while ($row =  mysqli_fetch_assoc($query)){
+            foreach($this->type as $key=>$value){
+                if($row['type']==$key){
+                    $row['type']=$value;
+                }
+            }
+            $result[] = $row;
+        }
+        
+        return $result;
+    }
 }
