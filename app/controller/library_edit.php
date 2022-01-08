@@ -85,7 +85,6 @@ class Library_edit
                 $_SESSION['book_author'] = $book_author;
                 $_SESSION['book_description'] = $book_description;
                 $_SESSION['book_quantity'] = $book_quantity;
-                // $_SESSION['tmp_name'] = $_FILES["file"]["tmp_name"];
                 $_SESSION['book_avatar'] = $_FILES["file"]["name"];
 
                 header("Location: ?url=library_edit&method=edit_book_confirm&id=$id");

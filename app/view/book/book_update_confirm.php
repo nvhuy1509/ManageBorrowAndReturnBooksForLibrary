@@ -19,6 +19,7 @@
             <label for="book_author">Tác giả</label>
             <input type="text" name="book_author" id="book-author" value="<?php echo  $author ?>" style="pointer-events: none;">
         </div>
+        
         <div class="book-quantity">
             <label for="book_quantity">Số lượng</label>
             <input type="number" name="book_quantity" id="book-quantity" value="<?php echo $quantity ?>" style="pointer-events: none;">
