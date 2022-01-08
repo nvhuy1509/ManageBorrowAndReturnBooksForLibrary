@@ -1,4 +1,5 @@
 <?php
+
 class Book
 {
     private $__conn;
@@ -16,6 +17,7 @@ class Book
             $this->__conn = $connect->getInstance();
         }
     }
+
     function getAll($table, $name = '', $cate = 0)
     {
         $sql = "select * from " . $table . " where name like '%" . $name . "%'";
@@ -35,7 +37,23 @@ class Book
 
         return $result;
     }
+    function getDataWithCate($table, $category, $name)
+    {
+        $sql = "select * from " . $table . " where category = " . $category . "and name like " . $name;
+        $query =  mysqli_query($this->__conn, $sql);
+        $row =  mysqli_fetch_assoc($query);
 
+        return $row;
+    }
+
+    function getDataNoCate($table, $name)
+    {
+        $sql = "select * from " . $table . " where name like " . $name;
+        $query =  mysqli_query($this->__conn, $sql);
+        $row =  mysqli_fetch_assoc($query);
+
+        return $row;
+    }
 
     function getDetailBook($table, $id)
     {
@@ -46,6 +64,26 @@ class Book
         return $row;
     }
 
+    function Update($table, $data, $id_table, $id)
+    {
+        $sql = "";
+        foreach ($data as $keys => $values) {
+            $sql .= $keys . "='" . $values . "',";
+        }
+        $sql = "update " . $table . " set " . rtrim($sql, ',') . " where " . $id_table . "=" . $id;
+        //var_dump($sql);
+        mysqli_query($this->__conn, $sql);
+        // echo $id;
+        // var_dump($data); die();
+    }
+    function getSingle($table, $id)
+    {
+        $sql = "select * from " . $table . " where id=" . $id;
+        $query =  mysqli_query($this->__conn, $sql);
+        $row =  mysqli_fetch_assoc($query);
+
+        return $row;
+    }
     function addBook($table, $name, $category, $author, $quantity, $description, $avatar)
     {
         $sql = "INSERT INTO " . $table . " (name, category, author, quantity, description, avatar)
@@ -74,4 +112,5 @@ class Book
 
         return $result;
     }
+
 }
