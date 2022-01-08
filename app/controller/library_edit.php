@@ -96,21 +96,26 @@ class Library_edit
 
     function edit_book_confirm()
     {
-        $category = array(
+        $arr_category = array(
             1 => 'Khoa học',
             2 => 'Tiểu thuyết',
             3 => 'Manga',
             4 => 'Sách giáo khoa'
         );
+        foreach($arr_category as $key =>$value){
+            if($_SESSION['book_category'] == $key){
+                $view_category = $value;
+            }
+        }
         include_once "app/model/book.php";
         $id = $_GET['id'];
         $name =  $_SESSION['book_name'];
         $author =  $_SESSION['book_author'];
-        foreach($category as $key => $value) {
-            if($_SESSION['book_category'] == $key) {
-                $type = $value;
-            }
-        }
+
+        $category = $_SESSION['book_category'];
+
+
+
         $quantity = $_SESSION['book_quantity'];
         $description = $_SESSION['book_description'];
         $file_name =  $_SESSION['book_avatar'];
@@ -156,8 +161,8 @@ class Library_edit
             $test = new Book();
             $test->Update('books', $book, 'id', $id);
         }
-        
-        
+
+
         $dir = 'web/avatar/tmp/';
         foreach (glob($dir . '*.*') as $v) {
             unlink($v);
@@ -286,11 +291,10 @@ class Library_edit
             $description = $_POST['description'];
             $file_name = $_POST['file_user'];
 
-           
+
             if (!file_exists("web/avatar/user/" . $_GET["id"] . "/" . $file_name)) {
                 if (!is_dir("web/avatar/user/" . $_GET["id"] . "/")) {
                     mkdir("web/avatar/user/" . $_GET["id"] . "/");
-
                 }
                 rename('web/avatar/tmp/' . $file_name, "web/avatar/user/" . $_GET["id"] . "/" . $file_name);
             }
@@ -298,9 +302,8 @@ class Library_edit
             $getUser = new User();
             $row = $getUser->GetSingle("users", $_GET["id"]);
 
-            if($row['avatar']!==$file_name){
+            if ($row['avatar'] !== $file_name) {
                 unlink("web/avatar/user/" . $_GET["id"] . "/" . $row['avatar']);
-
             }
             $data = array(
                 'name' => $name,
@@ -311,7 +314,6 @@ class Library_edit
             );
             $update = new User();
             $update->Update('users', $data, 'id', $_GET['id']);
-           
         }
         include_once 'app/view/user/user_edit_complete.php';
         unset($_SESSION['user_name']);
