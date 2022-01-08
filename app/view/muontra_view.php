@@ -1,4 +1,4 @@
-<h1>thao tac Mượn trả sách tại đây</h1>
+<h1> Mượn trả sách tại đây</h1>
 <!-- Content Header (Page header) -->
 <link rel="stylesheet" href="web/css/style_advanced_search.css">
 <section class="content-header">
@@ -16,14 +16,7 @@
             <h3 class="box-title">Tìm kiếm nâng cao</h3>
         </div>
         <!-- /.box-header -->
-        <div class="box-body my_box tab-content">
-            <div class="row" style="margin-bottom: 5px">
-                <div class="col-md-6">
-                    <button class="btn btn-sm btn-social btn-primary">
-                        <i class="fa fa-plus"></i> Thêm mới
-                    </button>
-                </div>
-            </div>
+        
             
             <form action="" class="adv-search" method="GET">
             <input  style="width:30%; " type="text" hidden name="url" value="muontra">
@@ -36,7 +29,17 @@
                             </div>
                             <div class="col-md-9">
                             <select name="search-book" class="form-select form-select-sm" aria-label=".form-select-sm example">
-                                <option selected></option>
+                            <?php if(isset( $_GET['search-book'])){
+                                ?>
+                                    <option value="<?php echo $_GET['search-book'] ?>" selected><?php echo $_GET['search-book']?></option>
+                                <?php
+                                }else{
+                                ?>
+                                    <option selected></option>
+                                <?php
+                                }
+                                ?>       
+                            
                                 <?php
                                 foreach ($result_book as $item_book) {
                                 ?>
@@ -55,7 +58,17 @@
                             </div>
                             <div class="col-md-9">
                             <select name="search-user" class="form-select form-select-sm" aria-label=".form-select-sm example">
-                                <option selected></option>
+                            <?php if(isset( $_GET['search-user'])){
+                                ?>
+                                    <option value="<?php echo $_GET['search-user'] ?>" selected><?php echo $_GET['search-user'] ?></option>
+                                <?php
+                                }else{
+                                ?>
+                                    <option selected></option>
+                                <?php
+                                }
+                                ?>    
+                            
                                 <?php
                                 foreach ($result_user as $item_user) {
                                 ?>
@@ -76,7 +89,17 @@
                             </div>
                             <div class="col-md-9">
                             <select name="search-status" class="form-select form-select-sm" aria-label=".form-select-sm example">
-                                <option selected></option>
+                                <?php if(isset( $_GET['search-status'])){
+                                ?>
+                                    <option value="<?php echo $_GET['search-status'] ?>" selected><?php echo $_GET['search-status'] ?></option>
+                                <?php
+                                }else{
+                                ?>
+                                    <option selected></option>
+                                <?php
+                                }
+                                ?>
+
                                 <?php
                                     for ($i = 0; $i < count($status); $i++) {
                                 ?>
@@ -95,7 +118,17 @@
                             </div>
                             <div class="col-md-9">
                             <select name="search-overdue" class="form-select form-select-sm" aria-label=".form-select-sm example">
-                            <option selected></option>
+                            <?php if(isset( $_GET['search-overdue'])){
+                                ?>
+                                    <option value="<?php echo $_GET['search-overdue'] ?>" selected><?php echo $_GET['search-overdue'] ?></option>
+                                <?php
+                                }else{
+                                ?>
+                                    <option selected></option>
+                                <?php
+                                }
+                                ?>
+                            
                                 <?php
                                     for ($i = 0; $i < count($overdue_day); $i++) {
                                 ?>
@@ -113,10 +146,10 @@
                     <div class="col-md-5">
                     </div>
                     <div class="col-md-2">
-                        <button  class="btn btn-primary btn-group" type="submit" >Reset</button>
+                        <button name="reset"  class="btn btn-primary btn-group" type="submit" >Reset</button>
                     </div>
                     <div class="col-md-2">
-                        <button  class="btn btn-primary btn-group" type="submit" >Tìm kiếm</button>
+                        <button name="search"  class="btn btn-primary btn-group" type="submit" >Tìm kiếm</button>
                     </div>
                     <div class="col-md-5">
                     </div>
@@ -167,17 +200,6 @@
                                         <td class="text-center align-middle"><?php echo $value['status'] ?></td>
                                 <?php   }
                                 ?>
-                                <td class="text-center align-middle">
-                                    <a type="button" class="btn btn-primary sua_sach" href="?url=library_edit&method=view_edit_input&id=<?php echo $value['id'] ?>">
-                                        Sửa
-                                    </a>
-                                    <button type="button" class="btn btn-danger">
-                                        Xóa
-                                    </button>
-                                    <a class="btn btn-default" title="Xem chi tiết" href="">
-                                        <i class="fa fa-eye"></i>
-                                    </a>
-                                </td>
                             </tr>
                         <?php }
                         }
