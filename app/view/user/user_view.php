@@ -66,11 +66,12 @@
             </tr>
           </thead>
           <tbody>
-            <?php foreach ($row as $value) {
+            <?php $stt = 1;
+             foreach ($row as $value) {
             ?>
 
               <tr>
-                <td class="text-center align-middle"><?php echo $value['id'] ?></td>
+                <td class="text-center align-middle"><?php echo $stt++ ?></td>
 
                 <td class="text-left align-middle"><?php echo $value['name'] ?></td>
                 <td class="text-left align-middle"><?php echo $value['type'] ?></td>
