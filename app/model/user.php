@@ -31,8 +31,14 @@
             $sql = "select * from ".$table." where id=".$id;
             $query =  mysqli_query($this->__conn, $sql);
             $row =  mysqli_fetch_assoc($query);
-          
             return $row;
+        }
+        function CheckUserId($table,$userId,$id){
+
+            $sql = "select * from ".$table." where (user_id= ".$userId. ")and (id!=".$id.")";
+            $query =  mysqli_query($this->__conn, $sql);
+           
+            return $query->num_rows;
         }
         function Update($table,$data,$id_table,$id){
             $sql = "";

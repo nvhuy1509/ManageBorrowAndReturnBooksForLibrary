@@ -61,11 +61,11 @@
             </tr>
           </thead>
           <tbody>
-            <?php  foreach($row as $value){
+            <?php  foreach($row as $key => $value){
               ?>
            
             <tr>
-              <td class="text-center align-middle"><?php echo $value['id'] ?></td>
+              <td class="text-center align-middle"><?php echo $key + 1 ?></td>
 
               <td class="text-left align-middle"><?php echo $value['name'] ?></td>
               <td class="text-left align-middle"><?php echo $value['type'] ?></td>

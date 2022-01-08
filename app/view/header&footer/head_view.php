@@ -83,6 +83,7 @@
                         <li><a href="?url=book"><i class="fa fa-user-plus"></i><span>Quản lý sách</span></a></li>
                         <li><a href="?url=user"><i class="fa fa-user-plus"></i><span>Người dùng</span></a></li>
                         <li><a href="?url=muontra"><i class="fa fa-th"></i><span>Mượn trả</span></a></li>
+                        <li><a href="?url=muontra"><i class="fa fa-th"></i><span>Mượn trả</span></a></li>
                     </ul>
                 </section>
                 <!-- /.sidebar -->

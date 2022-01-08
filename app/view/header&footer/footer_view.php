@@ -11,7 +11,7 @@
         <script src="<?php echo FULL_SITE_ROOT ?>web/js/bootstrap.min.js"></script>
         <script src="<?php echo FULL_SITE_ROOT ?>web/js/app.min.js"></script>
         <script src="<?php echo FULL_SITE_ROOT ?>web/js/library_edit.js"></script>
-        <script src="<?php echo FULL_SITE_ROOT ?>web/js/formValidation.min1.js" type="text/javascript"></script>
+        <script src="<?php echo FULL_SITE_ROOT ?>web/js/jquery.validate.min.js" type="text/javascript"></script>
         <script src="<?php echo FULL_SITE_ROOT ?>web/js/formValidation.min2.js" type="text/javascript"></script>
     </body>
 </html>
