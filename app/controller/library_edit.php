@@ -156,12 +156,18 @@ class Library_edit
             $test = new Book();
             $test->Update('books', $book, 'id', $id);
         }
-        session_destroy();
+        
         $dir = 'web/avatar/tmp/';
         foreach (glob($dir . '*.*') as $v) {
             unlink($v);
         }
         include_once 'app/view/book/book_update_complete.php';
+        unset($_SESSION['book_name']);
+        unset($_SESSION['book_category']);
+        unset($_SESSION['book_author']);
+        unset($_SESSION['book_quantity']);
+        unset($_SESSION['book_description']);
+        unset($_SESSION['book_avatar']);
     }
 
     // quản lý người dùng-> sửa
