@@ -31,15 +31,41 @@
             $getBook = new Book();
             $row = $getBook->DeleteBook("books",$id);
             include_once 'app/view/book/book_view.php';  
-            print_r('aaaaaaaaaaa');
+            
             die();
            
         }
         function search_user(){
+            include_once "app/model/user.php";
+            $type = 0;
+            $name = '';
+            if(isset( $_GET['type'])){
+                $type =$_GET['type'];
+            }
+            if(isset( $_GET['name_user'])) {
+                $name =$_GET['name_user'];
+            }
+            $getUser = new User();
+            $row = $getUser->getAll("users",$name,$type);
+            include_once 'app/view/user/user_view.php';
             
         }
-    }
-    $book = new Library_search();
+        function delete_user(){
+            $id =$_GET['id'];
+            include_once "app/model/user.php";
+            $getUser = new User();
+            $row = $getUser->DeleteUser("users",$id);
+            include_once 'app/view/user/user_view.php';  
+            die();
     
+    }
+ }
+ $book = new Library_search();
+    
+ $method = $_GET['method'];
+ $book->$method();
+
+    $user = new Library_search();
     $method = $_GET['method'];
-    $book->$method();
+    $user -> $method();
+    

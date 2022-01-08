@@ -14,42 +14,43 @@ class User
             $this->__conn = $connect->getInstance();
         }
     }
-    function getAll($table){
-        $sql = "select * from ".$table;
+    function getAll($table, $name = '', $type = 0)
+    {
+        $sql = "select * from " . $table . " where name like '%" . $name . "%'";
+        if (isset($type) && $type != 0) {
+            $sql .= "and type = " . $type;
+        }
         $query =  mysqli_query($this->__conn, $sql);
         $result = array();
-        while ($row =  mysqli_fetch_assoc($query)){
-            foreach($this->type as $key=>$value){
-                if($row['type']==$key){
-                    $row['type']=$value;
+        while ($row =  mysqli_fetch_assoc($query)) {
+            foreach ($this->type as $key => $value) {
+                if ($row['type'] == $key) {
+                    $row['type'] = $value;
                 }
             }
             $result[] = $row;
         }
-        
+
         return $result;
     }
-    function getSingle($table,$id){
-        $sql = "select * from ".$table." where id=".$id;
+    function getSingle($table, $id)
+    {
+        $sql = "select * from " . $table . " where id=" . $id;
         $query =  mysqli_query($this->__conn, $sql);
         $row =  mysqli_fetch_assoc($query);
+
         return $row;
     }
-    function CheckUserId($table,$userId,$id){
-
-        $sql = "select * from ".$table." where (user_id= ".$userId. ")and (id!=".$id.")";
-        $query =  mysqli_query($this->__conn, $sql);
-        
-        return $query->num_rows;
-    }
-    function Update($table,$data,$id_table,$id){
+    function Update($table, $data, $id_table, $id)
+    {
         $sql = "";
-        foreach($data as $keys => $values){
-            $sql .= $keys."='".$values."',";                 
+        foreach ($data as $keys => $values) {
+            $sql .= $keys . "='" . $values . "',";
         }
-        $sql="update ".$table." set ".rtrim($sql,',')." where ".$id_table."=".$id;
+        $sql = "update " . $table . " set " . rtrim($sql, ',') . " where " . $id_table . "=" . $id;
         mysqli_query($this->__conn, $sql);
     }
+
     function Add($table, $data)
     {
         $sql    = "";
@@ -69,5 +70,22 @@ class User
             // return false;
             return "Error: " . $sql . "<br>" . mysqli_error($this->__conn);
         }
+    }
+    function DeleteUser($table,$id){
+        $delete = "delete from ".$table." where id=".$id;
+        $querydelete =  mysqli_query($this->__conn, $delete);
+        $sql = "select * from ".$table."";
+        $query =  mysqli_query($this->__conn, $sql);
+        $result = array();
+        while ($row =  mysqli_fetch_assoc($query)){
+            foreach($this->type as $key=>$value){
+                if($row['type']==$key){
+                    $row['type']=$value;
+                }
+            }
+            $result[] = $row;
+        }
+        
+        return $result;
     }
 }
