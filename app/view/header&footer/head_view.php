@@ -84,7 +84,7 @@
                     <ul class="sidebar-menu">
                         <li><a href="?url=library_search&method=searchDataBook"><i class="fa fa-user-plus"></i><span>Quản lý sách</span></a></li>
                         <li><a href="?url=user"><i class="fa fa-user-plus"></i><span>Người dùng</span></a></li>
-                        <li><a href="?url=muontra"><i class="fa fa-th"></i><span>Mượn trả</span></a></li>
+                        <li><a href="?url=muontra&method=getAll"><i class="fa fa-th"></i><span>Mượn trả</span></a></li>
                         <li><a href="?url=history"><i class="fa fa-th"></i><span>Lịch sử mượn sách</span></a></li>
                         
                     </ul>
