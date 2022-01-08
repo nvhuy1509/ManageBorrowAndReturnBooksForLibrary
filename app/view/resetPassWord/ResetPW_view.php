@@ -13,10 +13,10 @@
           <table class="table table-bordered">
             <thead class="bg-orange">
               <tr>
-                <th class="text-center align-middle">No.</th>
+                <th class="text-center align-middle">NO</th>
                 <th class="text-center align-middle">Tên người dùng</th>
                 <th class="text-center align-middle">Mật khẩu mới</th>
-                <th class="text-center align-middle">Thao tác</th>
+                <th class="text-center align-middle">Action</th>
               </tr>
             </thead>
             <tbody>    

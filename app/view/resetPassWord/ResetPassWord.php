@@ -15,7 +15,7 @@
                 <div class="box-header">
                     <h2>Cấp lại mật khẩu</h2>
                 </div>
-                <label for="user_login">Nhập vào tên người dùng:</label>
+                <label for="user_login">Người dùng</label>
                 <br/>
                 <input type="text" name="user_login" id="user_login">
                 <br/>
