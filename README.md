@@ -9,6 +9,10 @@ Login/Logout:
 
 Sách:
 - Thêm, sửa, xóa thông tin sách
+
+- Category(Thể loại) :  
+ _Đặt chung theo format:_   1 => 'Khoa học', 2 => 'Tiểu thuyết',  3 => 'Manga',   4 => 'Sách giáo khoa'
+
 - Tìm kiếm, xem chi tiết
 
 Người dùng (Giáo viên, Sinh viên):
@@ -21,10 +25,13 @@ Mượn trả sách:
 - Log mượn trả của sách, Log mượn trả của người dùng
 
 
-## Database schema
-![database schema](/public/images/manage_library.png)
+## Admin account
+Mã hóa md5 trước khi insert admin account, ví dụ:
+`
+INSERT INTO admins (login_id, password, actived_flag) VALUES ('admin00', MD5('012345'), 1);
+`
+
 
 ## Rules
 - Pull code mới nhất từ main, tách branch trước khi code, tên branch thể hiện tính năng mình làm
 - Code xong push branch đó lên, tạo pull request.
-

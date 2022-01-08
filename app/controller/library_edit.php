@@ -96,7 +96,6 @@ class Library_edit
             }
             
         }
-
         include_once 'app/view/user/user_edit_input.php';
     }
     function view_edit_confirm()
@@ -150,7 +149,13 @@ class Library_edit
             $update->Update('users', $data, 'id', $_GET['id']);
         }
         include_once 'app/view/user/user_edit_complete.php';
-        session_destroy();
+        unset($_SESSION['user_name']);
+        unset($_SESSION['user_id']);
+        unset($_SESSION['user_type']);
+        unset($_SESSION['avatar']);
+        unset($_SESSION['description']);
+        unset($_SESSION['avatar']);
+        unset($_SESSION['file_tmp_name']);
     }
 }
 
