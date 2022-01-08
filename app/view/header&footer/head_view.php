@@ -12,11 +12,12 @@
     <link href="<?php echo FULL_SITE_ROOT ?>web/css/styleadmin.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="<?php echo FULL_SITE_ROOT ?>web/images/icon.png" type="image/x-icon" />
     <link rel="stylesheet" href="<?php echo FULL_SITE_ROOT ?>web/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo FULL_SITE_ROOT ?>web/css/stylebook.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="<?php echo FULL_SITE_ROOT ?>web/css/AdminLTE.min.css">
     <link rel="stylesheet" href="<?php echo FULL_SITE_ROOT ?>web/css/_all-skins.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <link rel="stylesheet" href="../../../web/css/viewInputSearch.css">
 </head>
 
 <body class="skin-blue sidebar-mini skin-green-light">
@@ -41,20 +42,21 @@
                         <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <?php echo $_SESSION["username"]; ?>
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header">
                                     <p>
-                                        -- Web Developer --
+                                        Login at: <?php echo $_SESSION['login_at']; ?>
                                     </p>
                                     <div class="user-footer">
                                         <div class="pull-left">
                                             <a href="" class="btn btn-default btn-flat">Đổi mật khẩu</a>
                                         </div>
                                         <div class="pull-right">
-                                            <a href="" class="btn btn-default btn-flat">Đăng xuất</a>
+                                            <a href="logout.php" class="btn btn-default btn-flat">Đăng xuất</a>
                                         </div>
                                     </div>
                                 </li>
@@ -82,13 +84,14 @@
                 <!-- /.search form -->
                 <!-- sidebar menu: : style can be found in sidebar.less -->
                 <ul class="sidebar-menu">
-                    <li><a href="?url=book"><i class="fa fa-user-plus"></i><span>Quản lý sách</span></a></li>
+                    <li><a href="?url=library_search&method=searchDataBook"><i class="fa fa-user-plus"></i><span>Quản lý sách</span></a></li>
                     <li><a href="?url=user"><i class="fa fa-user-plus"></i><span>Người dùng</span></a></li>
-                    <li><a href="?url=muontra"><i class="fa fa-th"></i><span>Mượn trả</span></a>
-                    </li>
+                    <li><a href="?url=muontra&method=getAll"><i class="fa fa-th"></i><span>Mượn trả</span></a></li>
+                    <li><a href="?url=history"><i class="fa fa-th"></i><span>Lịch sử mượn sách</span></a></li>
+
                 </ul>
-            </section>
-            <!-- /.sidebar -->
-        </aside>
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper right_col" id="right1">
+        </section>
+        <!-- /.sidebar -->
+    </aside>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper right_col" id="right1">

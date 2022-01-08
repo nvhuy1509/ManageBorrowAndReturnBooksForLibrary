@@ -66,11 +66,17 @@ form {
     margin-left: 50px;
 
 }
-
+.back {
+    background: #1a73e8;
+    color: black;
+    padding: 7px 45px;
+    border-radius: 3px;
+    margin: 5px 20px;
+}
 input[type='submit'] {
     background: #1a73e8;
     padding: 5px 45px 10px;
-    margin: 50px 150px;
+    margin: 50px;
     cursor: pointer;
     text-decoration: none;
     border-radius: 3px;

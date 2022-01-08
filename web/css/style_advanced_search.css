@@ -1,0 +1,11 @@
+select.form-select.form-select-sm {
+    width: 80%;
+    background: url('../image/Triangle.png') no-repeat #E8E8E8;
+    background-position: right;
+}
+
+button.btn.btn-primary.btn-group {
+    width: 120px;
+    margin-top: 50px;
+    margin-left: -36px;
+}

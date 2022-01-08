@@ -27,7 +27,7 @@
 
             <img src="<?php echo FULL_SITE_ROOT."web/avatar/tmp/".$file_name ?>" alt="" width="100" height="100">
         </div>
-        <a href="?url=library_edit_book&method=edit_book_input&id=<?php echo $id ?>&back" type="button">Sửa lại</a>
+        <a href="?url=library_edit_book&method=edit_book_input&id=<?php echo $id ?>&back" type="button" class="back">Sửa lại</a>
         <input type="submit" name="btn_confirm" value="Xác nhận">
     </form>
 </div>

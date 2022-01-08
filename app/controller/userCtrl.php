@@ -3,7 +3,7 @@
         function getAll(){
             include_once "app/model/user.php";
             $getUser = new User();
-            $row = $getUser->GetAll("users");
+            $row = $getUser->getAll("users");
             include_once 'app/view/user/user_view.php';
         }
     }
