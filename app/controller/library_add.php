@@ -188,6 +188,11 @@ class Library_add
                     mkdir("web/avatar/user/" .$_POST['id_user']);
                 }
                 rename('web/avatar/tmp/' . $file_name, "web/avatar/user/" .$_POST['id_user'] ."/" .$file_name);
+                $files = glob('web/avatar/tmp/*'); // get all file names
+                foreach ($files as $file) { // iterate files
+                    if (is_file($file))
+                        unlink($file); // delete file
+                }
                 $data = array(
                     'name'          =>  $name,
                     'type'          =>  $type,
